@@ -1,38 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Nunito_400Regular,} from '@expo-google-fonts/nunito';
-
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style= {styles.poppins}>Essa página retrata sobre as mulheres que foram (e são) importantes no ramo de tecnologia</Text>
-      <StatusBar style="auto" />
-    <div className='App'>
-      Grace Hooper
-    </div>
+      <Text style={styles.text}>Esse aplicativo retrata sobre as mulheres que mais contribuíram no ramo da tecnologia</Text>
+      <Button style={styles.botao} title='Grace Hooper' onPress={showAlert}/>
     </View>
   );
+}
+
+function showAlert(){
+  Alert.alert('Alert title', 'Grace Hooper', [
+    {text: 'OK', onPress: () => console.log('Ok, Pressed')}
+  ]);
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: 'rgb(224, 205, 255)',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: 'Poppins'
   },
   text: {
-    fontFamily: 'Poppins',
-    flex: 1,
-    marginTop: 30,
-    marginLeft: 40,
-    marginRight: 40,
-  },
-  poppins: {
-    fontFamily: Nunito_400Regular,
-    fontSize: 20,
     margin: 40,
+    fontSize: 20,
+    marginTop: -610,
+    backgroundColor: 'rgb(255, 250, 250)',
+    padding: 8,
+    borderRadius: 5,
+  },
+  botao: {
+    backgroundColor: '#F5F5F5',
+    fontSize: 20,
   }
 });
